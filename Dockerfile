@@ -9,5 +9,6 @@ FROM ubuntu:latest as runtime
 RUN mkdir /app
  
 COPY --from=builder /tmp/speedtest* /app/
+COPY ca-certificates.crt /etc/ssl/certs/
 
 ENTRYPOINT ["./app/speedtest"]
