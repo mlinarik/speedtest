@@ -4,10 +4,10 @@ RUN  apt update && apt install -y wget && \
   wget https://install.speedtest.net/app/cli/ookla-speedtest-1.1.1-linux-x86_64.tgz -P /tmp && \
   tar -xf /tmp/ookla-speedtest-1.1.1-linux-x86_64.tgz
   
- FROM ubuntu:latest as runtime
+FROM ubuntu:latest as runtime
  
- RUN mkdir /app
+RUN mkdir /app
  
- COPY --from=paper-builder /tmp/speedtest* /app
+COPY --from=paper-builder /tmp/speedtest* /app
  
- ENTRYPOINT ["/app/speedtest"]
+ENTRYPOINT ["/app/speedtest"]
