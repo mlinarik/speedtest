@@ -10,4 +10,4 @@ RUN mkdir /app
  
 COPY --from=builder /tmp/speedtest* /app/
 
-#ENTRYPOINT ["./app/speedtest"]
+ENTRYPOINT ["./app/speedtest"]
