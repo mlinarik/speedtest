@@ -9,3 +9,5 @@ FROM ubuntu:latest as runtime
 RUN mkdir /app
  
 COPY --from=builder /tmp/speedtest* /app/
+
+ENTRYPOINT ["/app/speedtest"]
